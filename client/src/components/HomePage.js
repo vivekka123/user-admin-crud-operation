@@ -31,16 +31,6 @@ const HomePage = () => {
             console.log(error);
         }
     }
-    // const handleDelete = (id) => {
-    //     axios.delete(`/api/items/${id}`)
-    //       .then(() => {
-    //         const updatedItems = userData.filter((user) => user._id !== id);
-    //         setItems(updatedItems);
-    //       })
-    //       .catch((error) => {
-    //         console.error('Error deleting item:', error);
-    //       });
-    //   };
    
   return (
     <div className='d-flex justify-content-center align-items-center w-100 flex-column'>
@@ -49,7 +39,7 @@ const HomePage = () => {
             <table className='table'>
                 <thead>
                     <tr>
-                        <th scope='col'>ID</th>
+                        <th scope='col' className='w-25'>ID</th>
                         <th scope='col'>Email ID</th>
                         <th scope='col'>User Name</th>
                         <th scope='col'>Password</th>
@@ -76,14 +66,6 @@ const HomePage = () => {
                                     <PencilSquare />
                                 </Link>
                             </td>
-                            {/* <td>
-        {items.map((item) => (
-          <li key={item._id}>
-            {item.name} - {item.description}
-            <button onClick={() => handleDelete(item._id)}>Delete</button>
-          </li>
-        ))}
-      </td> */}
 
                             <td onClick={()=> onDelete(user._id)}
                             >

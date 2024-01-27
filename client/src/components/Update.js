@@ -77,7 +77,7 @@ const cancelHandle =() =>{
 <div className='App p-5 d-flex justify-content-center align-items-center flex-column'>
     <h1 className='pb-3'>Update Data</h1>
     <form className='d-flex justify-content-center align-items-center'>
-        <div className='d-flex justify-content-center align-items-center flex-column gap-2 w-75'>
+        <div className='d-flex justify-content-center align-items-center flex-column gap-4 w-75'>
             <input
             className={`rounded ${userNameError ? "is-invalid" : ""}`}
             type='text'
