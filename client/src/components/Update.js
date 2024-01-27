@@ -27,11 +27,11 @@ const Update = () => {
             hasError =true;
             console.log("data",hasError)
         }
-        // if(password === ""){
-        //     setPasswordError("Insert password");
-        //     hasError =true;
-        //     console.log("received",hasError)
-        // }
+        if(password === ""){
+            setPasswordError("Insert password");
+            hasError =true;
+            console.log("received",hasError)
+        }
         if(email === ""){
             setEmailError("Insert email");
             hasError =true;
@@ -45,7 +45,7 @@ const Update = () => {
         }
         console.log("data received",hasError)
         if(!hasError){
-            const data = {userName,email, phoneNumber};
+            const data = {userName,email,password,phoneNumber};
             console.log( data)
         try {
             await axios.put(`http://localhost:6060/update/${id}`,data)
@@ -64,7 +64,8 @@ useEffect(()=>{
     .then((response)=>{
         setUserName(response.data.userName);
         setEmail(response.data.email);
-        setPhoneNumber(response.data.phoneNumber);
+        setPhoneNumber(response.data.phoneNumber)
+        setPassword(response.data.password)
         console.log(response.data);
     });
 }, []);
@@ -77,7 +78,7 @@ const cancelHandle =() =>{
 <div className='App p-5 d-flex justify-content-center align-items-center flex-column'>
     <h1 className='pb-3'>Update Data</h1>
     <form className='d-flex justify-content-center align-items-center'>
-        <div className='d-flex justify-content-center align-items-center flex-column gap-4 w-75'>
+        <div className='d-flex justify-content-center align-items-center flex-column gap- w-75'>
             <input
             className={`rounded ${userNameError ? "is-invalid" : ""}`}
             type='text'
@@ -101,6 +102,18 @@ const cancelHandle =() =>{
             />
             {emailError && (
                 <div className='invalid-feedback'>{emailError}</div>
+            )}
+            <input
+            className={`rounded ${passwordError ? "is-invalid" : ""}`}
+            type='text'
+            placeholder='Password'
+            value={password}
+            onChange={(e)=>{
+            setPassword(e.target.value);
+            }}
+            />
+            {passwordError && (
+                <div className='invalid-feedback'>{passwordError}</div>
             )}
             <input
             className={`rounded ${phoneNumberError ? "is-invalid" : ""}`}
