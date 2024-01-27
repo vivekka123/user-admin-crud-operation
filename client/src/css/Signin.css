@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.Apps{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top:40px;
+    height: 400px;
+    width: 50%;
+    text-align: center;
+    padding-top: 40px;
+    background-image: url(../images/loginback.jpg);
+    background-size: cover;
+    border:solid;
+    animation: signin 5s 2;
+    animation-direction: alternate-reverse;
+}
+.pb-3{
+    margin-top: 100px;
+}
+.mt-3{
+    padding: 6px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-right: 6px;
+    background-color: #90ee90;
+}
+@keyframes signin{
+    from{
+        background-image: url(../images/backpiclogin.jpg);
+    }
+    to{
+        background-image: url(../images/backlog.jpg);
+        background-size: contain;
+    }
+}

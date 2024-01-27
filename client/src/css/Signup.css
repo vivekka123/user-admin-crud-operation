@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Signup{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top:40px;
+    height: 400px;
+    width: 50%;
+    background-image: url(../images/backpictlog.jpg);
+    background-size: cover;
+    border:solid;
+    animation: signup 5s 2;
+    animation-direction:reverse;
+}
+@keyframes signup{
+    from{
+        background-image: url(../images/gradient.jpg);
+    }
+    to{
+        background-image: url(../images/gradient1.jpg);
+    }
+}
