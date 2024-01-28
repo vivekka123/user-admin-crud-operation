@@ -78,7 +78,7 @@ app.put("/update/:id",async (req,res)=>{
     const id =req.params.id;
     const {userName,email,phonenumber,password} = req.body;
     try{
-        await CrudModel.findByIdAndUpdate(id, {userName,email,phonenumber});
+        await CrudModel.findByIdAndUpdate(id, {userName,email,phonenumber,password});
         res.send("Data updated" );
     }catch (err) {
         res.send(err);
