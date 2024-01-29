@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { PencilSquare, Trash } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
-
+import "../css/Homepage.css";
 
 const HomePage = () => {
     //  const [items, setItems] = useState([]);
@@ -40,13 +40,13 @@ const HomePage = () => {
             <table className='table'>
                 <thead>
                     <tr>
-                        <th scope='col' className='w-25'>ID</th>
-                        <th scope='col'>Email ID</th>
-                        <th scope='col'>User Name</th>
-                        <th scope='col'>Password</th>
-                        <th scope='col'>Phone Number</th>
-                        <th scope='col'>Update</th>
-                        <th scope='col'>Delete</th>
+                        <th scope='col' className='table-data'>ID</th>
+                        <th scope='col' className= 'table-data'>Email ID</th>
+                        <th scope='col' className= 'table-data'>User Name</th>
+                        <th scope='col' className= 'table-data'>Password</th>
+                        <th scope='col' className= 'table-data'>Phone Number</th>
+                        <th scope='col' className= 'table-data'>Update</th>
+                        <th scope='col' className= 'table-data'>Delete</th>
                     </tr>
                 </thead>
                 <tbody>

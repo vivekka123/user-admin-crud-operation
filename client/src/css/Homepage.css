@@ -1,0 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.table{
+    line-height: 2;
+    border-spacing: 30px;
+    display:inline-table;
+    border-style: solid;
+}

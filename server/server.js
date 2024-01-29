@@ -30,7 +30,7 @@ const crudSchema= new mongoose.Schema({
     userName:String,
     password:String,
     email:String,
-    phonenumber:Number
+    phoneNumber:Number
 });
 
 const CrudModel =mongoose.model("crud_table_backend", crudSchema);
@@ -40,15 +40,14 @@ app.get("/get-all", async (req,res)=>{
     res.send(data);
 });
 app.post("/register", async (req,res)=>{
-    const {userName, password, email, phonenumber} =req.body;
+    const {userName, password, email, phoneNumber} =req.body;
     console.log(req.body);
     const post_data = new CrudModel({
         userName,
         password,
         email,
-        phonenumber
+        phoneNumber
     });
-
     await post_data.save();
     res.send("Data posted" + post_data);
 });
@@ -62,6 +61,9 @@ app.post("/signin", async (req, res)=>{
     if(password !== user.password) {
         return res.status(401).json({error:"Invalid password"});
     }
+    // if(email !== user.password || user.userName){
+    //     return res.status(401).json({error:"Invalid email"});
+    // }
      res.json({message:"Authentication succesfull"});
 });
 
@@ -77,9 +79,9 @@ app.get("/:id", async (req,res)=>{
 
 app.put("/update/:id",async (req,res)=>{
     const id =req.params.id;
-    const {userName,email,phonenumber,password} = req.body;
+    const {userName,email,phoneNumber,password} = req.body;
     try{
-        await CrudModel.findByIdAndUpdate(id, {userName,email,phonenumber,password});
+        await CrudModel.findByIdAndUpdate(id, {userName,email,phoneNumber,password});
         res.send("Data updated " );
     }catch (err) {
         res.send(err);

@@ -66,8 +66,8 @@ useEffect(()=>{
     .then((response)=>{
         setUserName(response.data.userName);
         setEmail(response.data.email);
-        setPhoneNumber(response.data.phoneNumber)
         setPassword(response.data.password)
+        setPhoneNumber(response.data.phoneNumber)
         console.log(response.data);
     });
 }, []);
