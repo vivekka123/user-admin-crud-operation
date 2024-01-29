@@ -14,6 +14,8 @@ const Update = () => {
     const [emailError, setEmailError]= useState("");
     const [phoneNumberError, setPhoneNumberError]=useState("");
 
+    const date=new Date();
+
     const id=location.pathname.split("/")[2];
     console.log(`The Update ID = ${id}`);
     
@@ -50,7 +52,7 @@ const Update = () => {
         try {
             await axios.put(`http://localhost:6060/update/${id}`,data)
             .then((response)=>{
-                console.log(response.data);
+                console.log(response.data + date);
                 navigate("/homepage");
             });
         } catch (err) {

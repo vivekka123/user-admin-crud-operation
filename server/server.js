@@ -8,6 +8,7 @@ const mongoose=require("mongoose");
 app.use(cors());
 app.use(bodyparser.json());
 
+const date=new Date();
 //db start
 
 //connect to mongodb
@@ -79,7 +80,7 @@ app.put("/update/:id",async (req,res)=>{
     const {userName,email,phonenumber,password} = req.body;
     try{
         await CrudModel.findByIdAndUpdate(id, {userName,email,phonenumber,password});
-        res.send("Data updated" );
+        res.send("Data updated " );
     }catch (err) {
         res.send(err);
     }
@@ -90,7 +91,7 @@ app.delete("/delete/:id",async (req,res)=>{
     console.log(id);
     try{
         await CrudModel.findByIdAndDelete(id);
-        res.send("Data updated");
+        res.send("Data deleted "+ date );
     }catch (err) {
         res.send(err);
     }

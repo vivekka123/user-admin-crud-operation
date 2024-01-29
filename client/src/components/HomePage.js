@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const HomePage = () => {
     //  const [items, setItems] = useState([]);
     const [userData, setUserData]= useState([]);
+    
 
     useEffect(()=>{
         axios.get("http://localhost:6060/get-all")
@@ -55,9 +56,9 @@ const HomePage = () => {
                             <th scope='row'>{index}</th>
                            
                             <td>{user.email}</td>
-                            <td>{user.username}</td>
+                            <td>{user.userName}</td>
                             <td>{user.password}</td>
-                            <td>{user.phonenumber}</td>
+                            <td>{user.phoneNumber}</td>
                             <td>
                                 <Link
                                 to={"/update/" + user._id}
